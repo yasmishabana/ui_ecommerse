@@ -50,7 +50,7 @@ class home extends StatelessWidget {
 
         actions: [
           Container(
-              margin: const EdgeInsets.all(9),
+              margin: const EdgeInsets.all(8),
               height: 40,
               width: 40,
               decoration: const BoxDecoration(
