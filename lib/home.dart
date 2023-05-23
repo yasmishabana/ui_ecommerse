@@ -133,18 +133,13 @@ class home extends StatelessWidget {
                           const SizedBox(
                             width: 20,
                           ),
-                          GestureDetector(
-                              onTap: () {
-                                Navigator.of(context)
-                                    .push(MaterialPageRoute(builder: (context) {
-                                  return DetailsPage();
-                                }));
-                              },
-                              child: buildcolumnwithrow(
-                                  "1", "Elemental Tin Candel", "29")),
-                          buildcolumnwithrow("2", "Summer Candel", "23"),
-                          buildcolumnwithrow("3", "Winter candel", "40"),
-                          buildcolumnwithrow("4", "dummy candel", "60")
+                          buildcolumnwithrow(
+                              "1", "Elemental Tin Candel", "29", context),
+                          buildcolumnwithrow(
+                              "2", "Summer Candel", "23", context),
+                          buildcolumnwithrow(
+                              "3", "Winter candel", "40", context),
+                          buildcolumnwithrow("4", "dummy candel", "60", context)
                         ],
                       ),
                     ),
@@ -274,35 +269,48 @@ class home extends StatelessWidget {
     );
   }
 
-  Padding buildcolumnwithrow(String img, String title, String price) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          Container(
-              height: 180,
-              width: 140,
-              child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    "assets/images/candel$img.jpg",
-                    fit: BoxFit.cover,
-                  ))),
-          const SizedBox(
-            height: 10,
-          ),
-          Text(
-            title,
-            style: TextStyle(fontSize: 11.5),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Text(
-            "\$ $price ",
-            style: TextStyle(fontSize: 14),
-          ),
-        ],
+  GestureDetector buildcolumnwithrow(
+      String img, String title, String price, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return DetailsPage(
+            img: img,
+            title: title,
+            price: price,
+            context: context,
+          );
+        }));
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Container(
+                height: 180,
+                width: 140,
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/images/candel$img.jpg",
+                      fit: BoxFit.cover,
+                    ))),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              title,
+              style: TextStyle(fontSize: 11.5),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "\$ $price ",
+              style: TextStyle(fontSize: 14),
+            ),
+          ],
+        ),
       ),
     );
   }

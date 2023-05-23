@@ -3,13 +3,21 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({super.key});
+  DetailsPage(
+      {required this.img,
+      required this.title,
+      required this.price,
+      required this.context});
+  late String img;
+  late String title;
+  late String price;
+  late BuildContext context;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Details Page"),
+        child: Text(title),
       ),
     );
   }
