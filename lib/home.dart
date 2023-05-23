@@ -340,7 +340,7 @@ class home extends StatelessWidget {
   OutlinedButton OutlinedBtn(String text, {bool isSelected = false}) {
     return OutlinedButton(
         style: OutlinedButton.styleFrom(
-          backgroundColor: isSelected ? Colors.pink[200] : Colors.grey[400],
+          backgroundColor: isSelected ? Colors.pink[100] : Colors.grey[400],
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         ),
