@@ -26,7 +26,7 @@ class DetailsPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           IconButton(
-              padding: EdgeInsets.only(left: 20, top: 30),
+              padding: const EdgeInsets.only(left: 20, top: 30),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -34,7 +34,7 @@ class DetailsPage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
@@ -46,15 +46,15 @@ class DetailsPage extends StatelessWidget {
                   Expanded(
                       child: SingleChildScrollView(
                     physics: const BouncingScrollPhysics(),
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "ILLUM",
                           style: TextStyle(fontSize: 10),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Row(
@@ -62,12 +62,12 @@ class DetailsPage extends StatelessWidget {
                           children: [
                             Text(
                               title,
-                              style: TextStyle(fontSize: 20),
+                              style: const TextStyle(fontSize: 20),
                             ),
                             Container(
                               child: Text(
                                 "\$$price",
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -76,7 +76,7 @@ class DetailsPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Row(
@@ -84,7 +84,7 @@ class DetailsPage extends StatelessWidget {
                             Expanded(
                                 child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
+                              children: const [
                                 Text("SIZE", style: TextStyle(fontSize: 10)),
                                 SizedBox(
                                   height: 5,
@@ -98,7 +98,7 @@ class DetailsPage extends StatelessWidget {
                             Expanded(
                                 child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
+                              children: const [
                                 Text("QTY", style: TextStyle(fontSize: 10)),
                                 SizedBox(
                                   height: 5,
@@ -111,40 +111,40 @@ class DetailsPage extends StatelessWidget {
                             ))
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Divider(
+                        const Divider(
                           thickness: 1.5,
                         ),
                         ListTile(
-                            leading: Text(
+                            leading: const Text(
                               "Details",
                               style: TextStyle(fontSize: 16.2),
                             ),
                             trailing: IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.add,
                                 color: Colors.black,
                               ),
                             )),
-                        Divider(
+                        const Divider(
                           thickness: 1.5,
                         ),
                         ListTile(
-                            leading: Text(
+                            leading: const Text(
                               "Shipping & Returns",
                               style: TextStyle(fontSize: 16.2),
                             ),
                             trailing: IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.add,
                                 color: Colors.black,
                               ),
                             )),
-                        Divider(
+                        const Divider(
                           thickness: 1.5,
                         ),
                       ],
@@ -163,7 +163,8 @@ class DetailsPage extends StatelessWidget {
                           child: Icon(Icons.favorite_border),
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color: Color.fromARGB(255, 238, 236, 236)),
+                                  color:
+                                      const Color.fromARGB(255, 238, 236, 236)),
                               shape: BoxShape.circle),
                         ),
                         TextButton(
